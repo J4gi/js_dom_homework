@@ -1,8 +1,18 @@
-/**
- * Created by Jacek on 2015-12-16.
- */
+document.addEventListener('DOMContentLoaded', function() {
 
+const tooltips = document.querySelectorAll('.tooltip');
 
-/*
- <span class="tooltipText">Text tooltipa</span>
- */
+for (let tooltip of tooltips) {
+  tooltip.addEventListener('mouseover', function(){
+    const newSpan = document.createElement('span');
+    newSpan.className = 'tooltipText';
+    newSpan.innerText = this.dataset.text;
+    this.appendChild(newSpan);
+  });
+
+  tooltip.addEventListener('mouseout', function(){
+    this.removeChild(this.lastChild);
+  });
+}
+
+});
