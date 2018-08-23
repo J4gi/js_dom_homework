@@ -9,34 +9,32 @@ let liClass=listElements[pictureIndex].className;
 //console.log(listElements[pictureIndex]);
 
 //3
-listElements[pictureIndex].className += ' visible';
+listElements[pictureIndex].classList.add('visible');
 console.log(listElements[pictureIndex]);
 
 //4
 nextButton.addEventListener('click', function() {
 //5
-  liClass=liClass.substring(' visible'.length);
-  listElements[pictureIndex].className=liClass;
+  listElements[pictureIndex].classList.remove('visible');
 //8
   if (pictureIndex===listElements.length-1) {
     pictureIndex=0;
   }else{
     pictureIndex++;
   }
-  listElements[pictureIndex].className += ' visible';
+  listElements[pictureIndex].classList.add('visible');
 });
 
 prevButton.addEventListener('click', function() {
 //6
-  liClass=liClass.substring(' visible'.length);
-  listElements[pictureIndex].className=liClass;
+  listElements[pictureIndex].classList.remove('visible');
 //8
   if (pictureIndex===0) {
     pictureIndex=listElements.length-1;
   }else{
     pictureIndex--;
   }
-  listElements[pictureIndex].className += ' visible';
+  listElements[pictureIndex].classList.add('visible');
 });
 
 
